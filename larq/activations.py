@@ -61,6 +61,6 @@ def leaky_tanh(x: tf.Tensor, alpha: float = 0.2) -> tf.Tensor:
     """
     return (
         tf.clip_by_value(x, -1, 1)
-        + (tf.math.maximum(x, 2) - 1) * alpha
+        + (tf.math.maximum(x, 2) - 2) * alpha
         + (tf.math.minimum(x, -1) + 1) * alpha
     )
